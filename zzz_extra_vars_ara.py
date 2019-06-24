@@ -44,12 +44,6 @@ class CallbackModule(CallbackBase):
   IGNORE_EXTRA_VARS = frozenset(('pass', 'mdp'))
   VALID_TYPES = ['text', 'url', 'json', 'list', 'dict']
 
-  def __init__(self):
-    super(CallbackModule, self).__init__()
-    self.extra_vars = []
-    if context.CLIARGS:
-      self.extra_vars = context.CLIARGS['extra_vars']
-
   def create_or_update_key(self, playbook_id, key, value, type):
     try:
       data = (models.Data.query
