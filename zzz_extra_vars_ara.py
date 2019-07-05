@@ -1,5 +1,4 @@
 from ansible.plugins.callback import CallbackBase
-from ansible import context
 
 DOCUMENTATION = '''
 callback: extra_vars_to_ara_record
